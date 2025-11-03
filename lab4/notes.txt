@@ -1,0 +1,50 @@
+TODO:
+1. Отдебажить Figure
+2. Создать дочерние классы 
+3. Создать класс FigureArray
+
+
+
+void best_practices() {
+    // ✅ ПРАВИЛЬНО
+    auto ptr1 = std::make_unique<MyClass>(42);  // Лучший способ
+    auto ptr2 = std::make_shared<MyClass>(42); // Для shared_ptr тоже
+    
+    // ❌ НЕПРАВИЛЬНО
+    // std::unique_ptr<MyClass> bad_ptr(new MyClass(42));
+    // std::shared_ptr<MyClass> bad_ptr2(new MyClass(42));
+    
+    // ✅ Передача владения
+    std::unique_ptr<MyClass> take_ownership(std::move(ptr1));
+    
+    // ✅ Возврат из функции
+    auto create_object = []() -> std::unique_ptr<MyClass> {
+        return std::make_unique<MyClass>(100);
+    };
+}
+
+Рекомендации по использованию:
+
+По умолчанию используйте unique_ptr
+
+Для разделяемого владения используйте shared_ptr
+
+Для вспомогательных ссылок используйте weak_ptr
+
+Всегда предпочитайте make_unique и make_shared
+
+Избегайте циклических ссылок с помощью weak_ptr
+
+Шаблоны — это механизм в C++, позволяющий писать обобщенный код, который работает с разными типами данных без 
+их явного указания на этапе написания кода. Это основа обобщенного программирования в C++.
+
+
+Скалярные типы данных в C++
+Арифметические типы:
+Целочисленные: int, short, long, long long, а также их беззнаковые (unsigned) варианты.
+С плавающей точкой: float и double.
+Символьные: char.
+Логический тип: bool (хранит true или false).
+Перечисления (enum): Пользовательские типы, состоящие из именованных констант.
+Указатели: Хранят адрес в памяти другого объекта.
+std::nullptr_t: Тип нулевого указателя. 

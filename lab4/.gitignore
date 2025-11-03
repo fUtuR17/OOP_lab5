@@ -1,0 +1,45 @@
+# Бинарные файлы и исполняемые
+*.exe
+*.out
+*.app
+*.dll
+*.so
+
+# Сборки
+build/
+bin/
+dist/
+scratches/
+
+# Объектные файлы
+*.o
+*.obj
+*.ko
+
+# Статические библиотеки
+*.a
+*.lib
+
+# Кэш компилятора
+*.gcno
+*.gcda
+
+# Отладочная информация
+*.pdb
+*.idb
+
+# Сгенерированные файлы
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Резервные копии
+*~
+*.swp
+*.swo
+
+# Системные
+.DS_Store
+Thumbs.db
